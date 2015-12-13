@@ -10,8 +10,8 @@ setup(
     author='Damien Howard',
     author_email='foxscotch@gmail.com',
     url='http://foxscotch.us/',
-    packages=['ocelot'],
-    install_requires=[
+    py_modules=['ocelot'],
+    requires=[
         'Markdown',
         'Jinja2',
         'PyYaml'
