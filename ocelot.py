@@ -195,7 +195,7 @@ def main():
 
         try:
             output_file = open(new_path, 'w+')
-        except OSError:
+        except IOError:
             os.makedirs(os.path.dirname(new_path))
             output_file = open(new_path, 'w+')
 
