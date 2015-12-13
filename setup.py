@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name='Ocelot',
-    version='1.0',
+    version='1.1',
     description='Static site generator designed for stories',
     author='Damien Howard',
     author_email='foxscotch@gmail.com',
