@@ -6,6 +6,11 @@ import argparse
 import yaml
 import jinja2
 import markdown
+from markdown import inlinepatterns
+
+
+# special_hr = inlinepatterns.SubstituteTagPattern('={3,}',
+#                 '<br/><p style="text-align: center;">>▰ ▰ ▰ ▰ ▰</p><br/>')
 
 
 def get_args():
@@ -48,7 +53,7 @@ def get_config(config_file_path):
 
     for key, val in defaults.items():
         if key not in config:
-            config[key] = value
+            config[key] = val
 
     return config
 
@@ -122,7 +127,7 @@ class ContentItem(object):
 
         self.path = parent.path + '/' + self.file_name
 
-        if type(parent) == ContentDir or parent == None: self.parent = parent
+        if type(parent) == ContentDir or parent is None: self.parent = parent
         else: raise ValueError('parent argument must be a ContentDir or None')
 
     def get_link(self):
@@ -204,9 +209,6 @@ def main():
         md.reset()
         input_file.close()
         output_file.close()
-
-
-
 
     copy_static()
 
